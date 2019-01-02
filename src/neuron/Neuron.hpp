@@ -13,6 +13,14 @@ namespace neuron
         Neuron();
         ~Neuron();
 
+        /*!
+            Adds a neuron as a dependent. Does not perform any sanity checks
+            for circular routes.
+
+            /param[in] p_neuron The neuron we will be looking at from now on.
+        */
+        void addNeuron(boost::shared_ptr<Neuron> p_neuron);
+
     private:
 
         /*!
@@ -22,6 +30,13 @@ namespace neuron
             /return The squished value, ranging from -1 to 1.
         */
         float fastSigmoid(float p_input);
+
+        /*!
+            Generates a random double.
+
+            /return A random double.
+        */
+        double getRandomDouble();
 
     private:
 

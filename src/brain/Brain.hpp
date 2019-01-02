@@ -8,13 +8,13 @@ namespace brain
     class Brain
     {
     public:
-        Brain();
+        Brain(int p_numInputs, int p_numOutputs, int p_numLayers, int p_numNeuronsPerLayer);
         ~Brain();
 
     private:
-        std::map< int, neuron::Neuron > m_inputNeurons;
+        std::map< int, boost::shared_ptr<neuron::Neuron> > m_inputNeurons;
 
-        std::map< int, neuron::Neuron > m_outputNeurons;
+        std::map< int, boost::shared_ptr<neuron::Neuron> > m_outputNeurons;
     };
 }
 
